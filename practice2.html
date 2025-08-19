@@ -203,6 +203,23 @@ function chunkArray(arr, k) {
 }
 // Example: console.log(chunkArray([2,3,4,5,6,7,8,9], 2));
 
+  
+
+ // ================= frequency map of elements =================
+
+var arr = ["a", "b", "a","c","a","c"];
+var frequency_map = {};
+for(d=0; d<arr.length; d++){
+     count = 0;
+     for(c=0; c < arr.length; c++){
+       if(arr[d] == arr[c]){
+          count++;
+       }
+    }
+    frequency_map[arr[d]] = count;
+}
+// document.write(JSON.stringify(frequency_map))
+
 </script>
 </body>
 </html>
