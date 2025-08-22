@@ -21,7 +21,7 @@ function CalCulator() {
     }
   };
 }
-// Example: console.log(CalCulator().sum(1).sum(3).total()); // 4
+ Example: console.log(CalCulator().sum(1).sum(3).total()); // 4
 
 
 // ================= Counter =================
@@ -41,7 +41,7 @@ function counter() {
     }
   };
 }
-// Example: console.log(new counter().increment().increment().decrement().value()); // 1
+ Example: console.log(new counter().increment().increment().decrement().value()); // 1
 
 
 // ================= String Builder =================
@@ -57,7 +57,7 @@ function StringBuilder() {
     }
   };
 }
-// Example: console.log(StringBuilder().add("Hello").add(" ").add("World").toString());
+ Example: console.log(StringBuilder().add("Hello").add(" ").add("World").toString());
 
 
 // ================= Number Operations =================
@@ -75,7 +75,7 @@ function NumberOps(first_number) {
     }
   };
 }
-// Example: console.log(NumberOps(5).multiply(2).add(3)); // 13
+ Example: console.log(NumberOps(5).multiply(2).add(3)); // 13
 
 
 // ================= Delay / Logger =================
@@ -94,7 +94,7 @@ class Delay {
     return this;
   }
 }
-// Example: new Delay().wait(1000).log("First").wait(500).log("Second");
+ Example: new Delay().wait(1000).log("First").wait(500).log("Second");
 
 
 class Logger {
@@ -123,7 +123,7 @@ function reverseString(str) {
   }
   return result.join("");
 }
-// Example: console.log(reverseString("ashishrana"));
+ Example: console.log(reverseString("ashishrana"));
 
 
 // ================= Palindrome Check =================
@@ -136,7 +136,7 @@ function isPalindrome(str) {
   }
   return true;
 }
-// Example: console.log(isPalindrome("racecar")); // true
+ Example: console.log(isPalindrome("racecar")); // true
 
 
 // ================= Count Vowels =================
@@ -148,7 +148,7 @@ function countVowels(str) {
   }
   return count;
 }
-// Example: console.log(countVowels("advedsihgou")); // 5
+ Example: console.log(countVowels("advedsihgou")); // 5
 
 
 // ================= Find Min & Max without Math.max/min =================
@@ -164,7 +164,7 @@ function findMinMax(arr) {
   }
   return { min: arr[0], max: arr[arr.length - 1] };
 }
-// Example: console.log(findMinMax([1,3,4,7,5,88,9])); // {min:1, max:88}
+ Example: console.log(findMinMax([1,3,4,7,5,88,9])); // {min:1, max:88}
 
 
 // ================= Remove Duplicates =================
@@ -175,7 +175,7 @@ function removeDuplicates(arr) {
   }
   return unique;
 }
-// Example: console.log(removeDuplicates([2,3,4,4,7,8,9,8,2]));
+ Example: console.log(removeDuplicates([2,3,4,4,7,8,9,8,2]));
 
 
 // ================= Flatten Array =================
@@ -190,7 +190,7 @@ function deepFlatten(arr) {
   }
   return result;
 }
-// Example: console.log(deepFlatten([1, [2, [3, 4], 5]]));
+ Example: console.log(deepFlatten([1, [2, [3, 4], 5]]));
 
 
 // ================= Chunk Array =================
@@ -201,7 +201,7 @@ function chunkArray(arr, k) {
   }
   return chunks;
 }
-// Example: console.log(chunkArray([2,3,4,5,6,7,8,9], 2));
+Example: console.log(chunkArray([2,3,4,5,6,7,8,9], 2));
 
   
 
@@ -218,7 +218,37 @@ for(d=0; d<arr.length; d++){
     }
     frequency_map[arr[d]] = count;
 }
-// document.write(JSON.stringify(frequency_map))
+ document.write(JSON.stringify(frequency_map))
+
+
+  // ================= camelCase / snake_case converters. ===================
+
+function toCamelCase(str) {
+    return str.toLowerCase().split('_')
+    .map((word, index) => index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)).join('');
+}
+
+  // =================  group by key: groupBy(users, u=>u.city).  =================
+
+
+let users = [
+  {name: "Ashish", city: "Pathankot"},
+  {name: "Rahul", city: "Pathankot"},
+  {name: "Lavi", city: "Amritsar"},
+  {name: "Abhi", city: "Amritsar"},
+  {name: "Rajput", city: "Pathankot"}
+]
+
+var groups = {};
+
+users.forEach(function(user){
+  if(!groups[user.city]){
+    groups[user.city] = [];
+  }
+  groups[user.city].push(user);
+})
+
+document.write(JSON.stringify(groups));
 
 </script>
 </body>
